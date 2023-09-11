@@ -1,0 +1,29 @@
+[{
+    "id": 1,
+    "task": "Acabar curso de Front",
+    "complete": true
+  }, {
+    "id": 2,
+    "task": "Renovar pasaporte",
+    "complete": true
+  }, {
+    "id": 3,
+    "task": "Conseguir experiencia IT",
+    "complete": false
+  }, {
+    "id": 4,
+    "task": "Renovar Visa",
+    "complete": true
+  }, {
+    "id": 5,
+    "task": "Acabar curso de conduccion",
+    "complete": false
+  }, {
+    "id": 6,
+    "task": "Conseguir dinero de deudas",
+    "complete": true
+  }, {
+    "id": 7,
+    "task": "Conseguir trabajo IT",
+    "complete": false
+  }]
