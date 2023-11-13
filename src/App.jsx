@@ -3,7 +3,7 @@ import Listaapp from  './Listaapp.jsx'
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Menu } from "./components/Menu";
-import viteLogo from '/rayo.jpg';
+import viteLogo from '/escudo.png';
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
 
 
