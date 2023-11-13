@@ -6,14 +6,16 @@ import { Menu } from "./components/Menu";
 import viteLogo from '/rayo.jpg';
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
 
+
 // 2. Extend the theme to include custom colors, fonts, etc
-const colors = {
-  brand: {
-    900: '#white',
-    800: '#white',
-    700: '#white',
-  },
-}
+  const colors = {
+    brand: {
+      900: 'white',
+      800: 'white',
+      700: 'white',
+    },
+  }
+  
 
 const theme = extendTheme({ colors })
 
