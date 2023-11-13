@@ -4,7 +4,6 @@ import {Task} from './Task';
  export const List = ({List, handleToggle}) => {
 
 
-
    return (
        <div>
            {List.map(todo => {

@@ -1,49 +1,58 @@
 
-import viteLogo from '/rayo.jpg';
-import { useState } from 'react';
-import {List} from "./components/List"; 
+import Listaapp from  './Listaapp.jsx'
 import './App.css';
-import data from "./data.json";
-import ToDoForm from './components/Addfile';
- 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Menu } from "./components/Menu";
+import viteLogo from '/rayo.jpg';
+import { extendTheme, ChakraProvider } from '@chakra-ui/react'
+
+// 2. Extend the theme to include custom colors, fonts, etc
+const colors = {
+  brand: {
+    900: '#white',
+    800: '#white',
+    700: '#white',
+  },
+}
+
+const theme = extendTheme({ colors })
+
+// 3. Pass the `theme` prop to the `ChakraProvider`
 function App() {
-const [ DataList, setDataList ] = useState(data);
-
-const handleToggle = (id) => {
-  let mapped = DataList.map(task => {
-    return task.id === Number(id) ? { ...task, complete: !task.complete } : { ...task};
-  });
-  setDataList(mapped);
-}
-
-const handleFilter = () => {
-  let filtered = DataList.filter(task => {
-    return !task.complete;
-  });
-  setDataList(filtered);
-}
-
-const addTask = (userInput ) => {
-  let copy = [...DataList];
-  copy = [...copy, { id: DataList.length + 1, task: userInput, complete: false }];
-  setDataList(copy);
-}
-
- 
- 
- return (
+  return (
+    <ChakraProvider theme={theme}>
   <div>
-        <a href="https://github.com/CodeReplicant" >
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
+
+    <a href="https://github.com/CodeReplicant" >
+     <img src={viteLogo} className="logo" alt="Vite logo" />
+    </a>
+            
   
-      <h1>Lista de tareas</h1>
-     <List List={DataList} handleToggle={handleToggle}/>
-     <button style={{margin: '20px'}} onClick={handleFilter}>Borrar</button>
-    <ToDoForm addTask={addTask}/>
- 
-    </div>
- );
+<div>
+
+
+      
+ <BrowserRouter>
+      <Routes>
+
+      <Route path="/" element= {<h1>Bienvenido</h1>} />
+
+        <Route path="/Listaapp" element={<Listaapp />} />
+    
+
+      </Routes>
+
+      <Menu />
+
+    </BrowserRouter>
+
+</div>
+
+</div>
+
+</ChakraProvider>
+  );
+  
 }
  
 export default App;

@@ -8,14 +8,15 @@ export function Task({ taskind, handleToggle }) {
     handleToggle(e.currentTarget.id);
   };
 
-  const handleEditClick = () => {
+  const handleEditClick = (e, userInput) => {
+    e.preventDefault();
     console.log('Edited task:', userInput);
-    setUserInput('');
+    setUserInput(userInput.task);
   };
 
   return (
     <div>
-    <p> {taskind.id    }         {taskind.task}</p>
+    <p> {taskind.id}.{taskind.task}</p>
     <p></p>
       <input
         type="text"
@@ -31,3 +32,5 @@ export function Task({ taskind, handleToggle }) {
     </div>
   );
 }
+
+
